@@ -1,5 +1,5 @@
 <script>
-  import { mapState, mapGetters } from 'vuex'
+  import {mapState} from 'vuex'
 
   export default {
     data () {
@@ -9,10 +9,7 @@
       ...mapState({
         cartItems: state => state.cart.items,
         totalPrice: state => state.cart.totalPrice
-      }),
-      ...mapGetters([
-        'getTotalPrice'
-      ])
+      })
     }
   }
 </script>
@@ -26,7 +23,7 @@
       {{ item.title }}
     </div>
     <div class="total-price">
-      Общая стоиомость
+      Общая стоймость
       <span> $ {{ totalPrice }} </span>
     </div>
   </div>

@@ -49,7 +49,6 @@ const getters = {}
 
 const mutations = {
   pushProductToCart (state, productInfo) {
-    console.log(productInfo)
     if (productInfo.product.isInCart) {
       for (let i = 0; i < productInfo.productAmount; i++) {
         cartStore.state.items.push(productInfo.product)

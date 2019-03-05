@@ -18,9 +18,8 @@
       <h2>Shopping cart</h2>
       <nav class="g-header__nav">
         <li class="g-header__nav-li">
-          <router-link active-class="my-active-class" to="/">Home</router-link>
+          <router-link active-class="my-active-class" to="/" exact>Home</router-link>
         </li>
-        <li class="g-header__nav-li">Link 2</li>
         <div class="g-header__nav-cart">
           <router-link to="/cart"
                        active-class="my-active-class">
@@ -37,8 +36,11 @@
 </template>
 
 <style scoped>
+  h2 {
+    font-family: 'Roboto Light';
+  }
   .g-header {
-    color: #282828;
+    color: var(--c-black);
     background: var(--c-gray);
     box-shadow: -1px 2px 11px 0px #c9c9c9;
   }
@@ -60,13 +62,21 @@
     font-size: 18px;
   }
 
-  .g-header__nav-cart a {
+  .g-header__nav-li a {
+    color: var(--c-black);
     text-decoration: none;
   }
 
+  .g-header__nav-cart a {
+    text-decoration: none;
+  }
   .cart-number {
     position: relative;
     text-decoration: none;
     top: -10px;
+  }
+
+  .my-active-class {
+    border-bottom: 2px solid var(--c-blue);
   }
 </style>

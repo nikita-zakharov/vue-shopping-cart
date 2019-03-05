@@ -6,7 +6,6 @@ import Cart from './components/Cart.vue'
 
 Vue.use(VueRouter)
 
-
 const router = new VueRouter({
   mode: 'history',
   routes: [
