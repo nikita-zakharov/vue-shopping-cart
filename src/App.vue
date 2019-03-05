@@ -26,6 +26,12 @@
     font-size: 16px;
     margin: 0;
   }
+
+  :root {
+    --c-blue: #03a9f4;
+    --c-pink: #ec407a;
+    --c-gray: #eee;
+  }
   .container {
     max-width: 1100px;
     margin: 0 auto;

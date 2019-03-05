@@ -1,20 +1,14 @@
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
-
-# Ignore Byebug command history file.
-.byebug_history
-
-# Frontend-specific rules
-node_modules
-npm-debug.log
-npm-debug*
-/dist
-
-# Environment/IDE-specific rules
 .DS_Store
-/.idea/
+node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
 .vscode
-/src/.idea/
-/src/docs/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

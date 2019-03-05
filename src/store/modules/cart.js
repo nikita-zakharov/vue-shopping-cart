@@ -1,12 +1,9 @@
 const state = {
-  items: []
+  items: [],
+  totalPrice: 0
 }
 
-const getters = {
-  getTotalPrice: state => {
-    return state.items
-  }
-}
+const getters = {}
 
 const mutations = {}
 
