@@ -7,7 +7,7 @@
       }
     },
     computed: mapState({
-      cartCount: state => state.cart.items.length
+      cartCount: state => state.cart.totalGoods
     })
   }
 </script>

@@ -7,13 +7,18 @@
     },
     methods: {
       addProductToCart (product, productIndex) {
-        let productAmount = this.$refs.input_count[productIndex].value
+        let productAmount = Number(this.$refs.input_count[productIndex].value)
         let productInfo = {
           product,
           productAmount
         }
-        product.isInCart = true
-        this.$store.dispatch('pushProductToCart', productInfo)
+        if (productInfo.productAmount && !product.isInCart) {
+          product.isInCart = true
+          this.$store.dispatch('pushProductToCart', productInfo)
+        }
+        else {
+          this.$router.push('/cart')
+        }
       }
     },
     computed: {
