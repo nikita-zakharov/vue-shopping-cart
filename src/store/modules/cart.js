@@ -13,7 +13,6 @@ const mutations = {
     state.items.splice(itemInfo.itemIndex, 1)
     state.totalGoods -= itemInfo.item.productAmount
     state.totalPrice -= itemInfo.item.product.price * itemInfo.item.productAmount
-    console.log(itemInfo.item.product.id)
     productStore.state.items.find(item => {
       if (item.id === itemInfo.item.product.id) {
         item.isInCart = false

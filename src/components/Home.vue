@@ -35,7 +35,6 @@
     <div class="products">
       <div v-for="(product, productIndex) in products"
            :key="productIndex"
-           :title="product.title"
            class="products-card">
         <img class="products-card__image"
              :src="product.imgPath" alt="">
@@ -85,13 +84,25 @@
   .products-card__title {
     font-size: 24px;
     margin-bottom: 10px;
-    min-height: 130px;
+    min-height: 100px;
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .products-card__description {
     font-size: 14px;
     margin-bottom: 10px;
-    height: 70px;
+    height: 75px;
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .products-card__price {

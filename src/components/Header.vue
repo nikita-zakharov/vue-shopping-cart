@@ -1,10 +1,9 @@
 <script>
-  import { mapState } from 'vuex'
-  export default {
-    data() {
-      return {
+  import {mapState} from 'vuex'
 
-      }
+  export default {
+    data () {
+      return {}
     },
     computed: mapState({
       cartCount: state => state.cart.totalGoods
@@ -39,23 +38,27 @@
   h2 {
     font-family: 'Roboto Light';
   }
+
   .g-header {
     color: var(--c-black);
     background: var(--c-gray);
     box-shadow: -1px 2px 11px 0px #c9c9c9;
   }
+
   .g-header__wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left: 0;
   }
+
   .g-header__nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left: 0;
   }
+
   .g-header__nav-li {
     padding: 0px 30px;
     list-style: none;
@@ -70,6 +73,7 @@
   .g-header__nav-cart a {
     text-decoration: none;
   }
+
   .cart-number {
     position: relative;
     text-decoration: none;

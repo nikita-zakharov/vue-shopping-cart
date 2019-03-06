@@ -37,8 +37,9 @@
           <div class="cart-products__item-amount">Количество: {{ item.productAmount }}</div>
           <button class="cart-products__item-delete" @click="deleteFromCart(item, itemIndex)">Удалить</button>
         </div>
-
+        <p v-if="!cartItems.length"> Пока пусто :( </p>
       </div>
+
       <div class="total-price">
         Общая стоймость
         <span> $ {{ totalPrice }} </span>
