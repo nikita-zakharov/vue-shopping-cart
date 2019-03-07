@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 
 import Home from './components/Home.vue'
 import Cart from './components/Cart.vue'
+import Button from './components/control/Button.vue'
+
+Vue.component('c-button', Button)
 
 Vue.use(VueRouter)
 

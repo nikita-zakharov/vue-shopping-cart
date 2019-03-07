@@ -32,10 +32,10 @@
              :key="itemIndex"
              v-if="cartItems.length"
              class="cart-products__item">
-          <img class="cart-products__item-image" :src="item.product.imgPath">
+          <img class="cart-products__item-image" :src="item.product.images[0].imgPath">
           <div class="cart-products__item-title">{{ item.product.title }}</div>
           <div class="cart-products__item-amount">Количество: {{ item.productAmount }}</div>
-          <button class="cart-products__item-delete" @click="deleteFromCart(item, itemIndex)">Удалить</button>
+          <c-button @click.native="deleteFromCart(item, itemIndex)">Удалить</c-button>
         </div>
         <p v-if="!cartItems.length"> Пока пусто :( </p>
       </div>

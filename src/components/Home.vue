@@ -1,9 +1,11 @@
 <script>
   import {mapState} from 'vuex'
+  import {Carousel, Slide} from 'vue-carousel'
 
   export default {
-    data () {
-      return {}
+    components: {
+      Carousel,
+      Slide
     },
     methods: {
       addProductToCart (product, productIndex) {
@@ -32,12 +34,18 @@
 <template>
   <div class="container">
     <h3>Products</h3>
+
     <div class="products">
       <div v-for="(product, productIndex) in products"
            :key="productIndex"
            class="products-card">
-        <img class="products-card__image"
-             :src="product.imgPath" alt="">
+        <carousel :per-page="1">
+          <slide v-for="(image, index) in product.images"
+                 :key="index">
+            <img class="products-card__image"
+                 :src="image.imgPath" alt="">
+          </slide>
+        </carousel>
         <div class="products-card__title">
           {{ product.title }}
         </div>
@@ -51,11 +59,11 @@
           <input class="product-card__count" type="number" value="1" ref="input_count">
           Количество
         </label>
-        <button class="products-card__buy"
-                :style="[product.isInCart ? { background: 'var(--c-pink)' } : 'var(--c-blue)' ]"
-                @click="addProductToCart (product, productIndex)">
+        <c-button :full="true"
+                  :style="[product.isInCart ? { background: 'var(--c-pink)' } : 'var(--c-blue)' ]"
+                  @click.native="addProductToCart (product, productIndex)">
           {{ product.isInCart ? 'Оформить' : 'В корзину' }}
-        </button>
+        </c-button>
       </div>
     </div>
   </div>
@@ -117,18 +125,4 @@
     margin-right: 10px;
   }
 
-  .products-card__buy {
-    width: 100%;
-    border: none;
-    background-color: var(--c-blue);
-    padding: 15px 20px;
-    color: white;
-    cursor: pointer;
-    outline: none;
-    transition: .3s;
-  }
-
-  .products-card__buy:hover {
-    background-color: var(--c-pink);
-  }
 </style>
